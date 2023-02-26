@@ -2,10 +2,23 @@ const Joi = require("joi");
 const addSchema = Joi.object({
   id: Joi.string().required(),
   name: Joi.string().required(),
+  email: Joi.string()
+    .email({
+      minDomainSegments: 2,
+    })
+    .required(),
+  phone: Joi.string().required(),
+});
+
+const updateSchema = Joi.object({
+  id: Joi.string().required(),
+  name: Joi.string(),
   email: Joi.string().email({
     minDomainSegments: 2,
-    tlds: { allow: ["com", "net"] },
   }),
-  phone: Joi.number().required(),
+  phone: Joi.string(),
 });
-module.exports = { addSchema };
+module.exports = {
+  addSchema,
+  updateSchema,
+};

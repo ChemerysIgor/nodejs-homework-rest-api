@@ -9,7 +9,7 @@ router.get("/:id", ctrl.getContactById);
 
 router.post("/", validateBody(schema.addSchema), ctrl.addContact);
 
-router.put("/:id", validateBody(schema.addSchema), ctrl.updateContact);
+router.put("/:id", validateBody(schema.updateSchema), ctrl.updateContact);
 
 router.delete("/:id", ctrl.deleteContact);
 

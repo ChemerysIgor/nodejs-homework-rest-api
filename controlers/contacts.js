@@ -45,8 +45,7 @@ const deleteContact = async (req, res) => {
   if (!result) {
     throw HttpError(404, "Not found");
   }
-  res.json({ message: "Delete success " });
-  res.json({ message: "template message" });
+  res.json({ message: "Delete success" });
 };
 module.exports = {
   getAllContacts: ctrlWrapper(getAllContacts),
